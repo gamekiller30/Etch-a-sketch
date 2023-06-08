@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Main</title>
+
+  <!-- font awesome cdn link  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+  <!-- custom css file link  -->
+  <link rel="stylesheet" href="index.css">
+
+
+
+</head>
+
+<body>
+
+<div class="center-wrapper">
+<div class="bg-wrapper">
+
+
+<div class="div-container-flex">
+
+
+
+
+
+
+</div>
+
+</div>
+
+
+<script>
+
+const container = document.querySelector(".div-container-flex");
+let div;
+
+const alldivs = [];
+
+
+
+let width = container.clientWidth;
+console.log(width)
+
+function createGrid(gridrow){
+
+for(let i = 0; i < gridrow - 1; i++){
+  for(let k = 0; k < gridrow; k++){
+
+div = document.createElement("div");
+div.classList.add("box");
+div.style.width = width / gridrow + 'px'; /*Funktioniert noch nicht 100% aber richtiger Weg*/
+div.style.height = 30 + 'px';
+div.addEventListener("mouseover", (e) =>{
+  e.target.style.backgroundColor = "red";
+  console.log("hovered");
+});
+
+container.appendChild(div);
+console.log("div created");
+alldivs.push(div);
+
+}
+
+
+  }
+
+
+
+}
+
+
+
+function clear(arr){
+
+
+arr.forEach(arritem =>{
+
+console.log(arritem);
+arritem.style.backgroundColor = "white";
+arritem.removeEventListener("mouseover", (e) =>{
+  e.target.style.backgroundColor = "red";
+  console.log("hovered");
+});
+
+});
+
+
+
+
+
+}
+
+clear(alldivs);
+console.log(alldivs);
+createGrid(20); /*Momentanes Grid is 19x20 nicht 20x20!!!*/
+
+</script>
+
+
+</body>
+
+</html>

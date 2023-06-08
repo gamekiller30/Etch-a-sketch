@@ -1,0 +1,37 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.center-wrapper{
+display: flex;
+justify-content: center;
+}
+
+.bg-wrapper{
+  width: 80%;
+  justify-content: center;
+  background-color: lightgray;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+}
+
+.div-container-flex{
+ 
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+
+}
+
+
+.box{
+   border: 2px solid black;
+   padding: 5px; 
+   background-color: white;
+   
+}
+
