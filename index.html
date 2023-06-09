@@ -45,25 +45,28 @@ const alldivs = [];
 
 
 let width = container.clientWidth;
+let height = container.clientHeight;
 console.log(width)
+console.log(height)
 
 function createGrid(gridrow){
 
-for(let i = 0; i < gridrow - 1; i++){
+for(let i = 0; i < gridrow; i++){
   for(let k = 0; k < gridrow; k++){
 
 div = document.createElement("div");
 div.classList.add("box");
 div.style.width = width / gridrow + 'px'; /*Funktioniert noch nicht 100% aber richtiger Weg*/
-div.style.height = 30 + 'px';
+div.style.height = height / gridrow + 'px';
 div.addEventListener("mouseover", (e) =>{
   e.target.style.backgroundColor = "red";
   console.log("hovered");
 });
 
 container.appendChild(div);
-console.log("div created");
 alldivs.push(div);
+console.log("div created");
+
 
 }
 
@@ -96,9 +99,9 @@ arritem.removeEventListener("mouseover", (e) =>{
 
 }
 
-clear(alldivs);
+//clear(alldivs);
 console.log(alldivs);
-createGrid(20); /*Momentanes Grid is 19x20 nicht 20x20!!!*/
+createGrid(10); /*Momentanes Grid is 19x20 nicht 20x20!!!*/
 
 </script>
 
