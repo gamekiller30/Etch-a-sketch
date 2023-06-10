@@ -18,20 +18,33 @@
 
 <body>
 
+<div class="header">Etch-a-Sketch</div>
 
 
-<div class="center-wrapper">
+
+
 <div class="bg-wrapper">
+
+  <div class="Option-flex">
+
+    <div class="op-h">Choose one of this option down below:</div>
+  
+  <button id="grid-create">Create Grid</button>
+  <button id="grid-clear">Clear Grid</button>
+  
+  </div>
+
 
 <div class="div-container-flex">
 
 </div>
 </div>
-</div>
-<button id="grid-create">Create Grid</button>
-<button id="grid-clear">Clear Grid</button>
+
+
 
 <script>
+
+
 
 const container = document.querySelector(".div-container-flex");
 const grid_btn = document.querySelector("#grid-create");
@@ -52,8 +65,20 @@ console.log(width)
 console.log(height)
 
 
+function Col (colnum) {
+   r = Math.floor(Math.random() * colnum);
+   g = Math.floor(Math.random() * colnum);
+   b = Math.floor(Math.random() * colnum);
+
+return `rgb(${r},${g},${b})`;
+
+}
+
+
+
+
 function Hovercol (e){
-  e.target.style.backgroundColor = "red";
+  e.target.style.backgroundColor = Col(255);
   console.log("hovered");
 }
 
