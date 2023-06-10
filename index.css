@@ -4,30 +4,19 @@
   box-sizing: border-box;
 }
 
-
-.center-wrapper{
-display: flex;
-justify-content: center;
-}
-
 .bg-wrapper{
-  justify-content: center;
-  width: 100%;
-  background-color: lightgray;
-  min-height: 100%;
+  margin-top: 20px;
   display: flex;
-  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  gap: 40px;
+
 }
 
 .div-container-flex{
- 
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   width: 76%;
-  min-height: 400px;
-  align-content: center;
-
 }
 
 
@@ -37,3 +26,41 @@ justify-content: center;
    
 }
 
+.header{
+  text-align: center;
+  font-size: 50px;
+  color: rgb(158, 158, 255);
+}
+
+.header:hover{
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+
+.Option-flex{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: center;
+  align-self: center;
+  
+}
+
+.Option-flex > button{
+  padding: 20px;
+  border-radius: 40px;
+  border: none;
+  background-color: rgb(158, 158, 255);
+  color: white;
+}
+
+.Option-flex > button:hover{
+  cursor: pointer;
+  background-color: rgb(129, 129, 208);
+}
+
+.op-h{
+  font-size: 20px;
+  color: rgb(129, 129, 208);
+}
