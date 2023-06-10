@@ -14,98 +14,99 @@
   <link rel="stylesheet" href="index.css">
 
 
-
 </head>
 
 <body>
 
+
+
 <div class="center-wrapper">
 <div class="bg-wrapper">
 
-
 <div class="div-container-flex">
 
-
-
-
-
-
 </div>
-
 </div>
-
+</div>
+<button id="grid-create">Create Grid</button>
+<button id="grid-clear">Clear Grid</button>
 
 <script>
 
 const container = document.querySelector(".div-container-flex");
+const grid_btn = document.querySelector("#grid-create");
+const clear_btn = document.querySelector("#grid-clear");
+
 let div;
 
 const alldivs = [];
 
+grid_btn.addEventListener("click", createGrid);
+clear_btn.addEventListener("click", clear);
 
 
 let width = container.clientWidth;
 let height = container.clientHeight;
+
 console.log(width)
 console.log(height)
 
-function createGrid(gridrow){
 
-for(let i = 0; i < gridrow; i++){
+function Hovercol (e){
+  e.target.style.backgroundColor = "red";
+  console.log("hovered");
+}
+
+
+function createGrid(){
+
+  container.innerHTML = "";
+
+ let gridrow = prompt();
+
+if(gridrow <= 100){
+
+  for(let i = 0; i < gridrow; i++){
   for(let k = 0; k < gridrow; k++){
 
 div = document.createElement("div");
 div.classList.add("box");
 div.style.width = width / gridrow + 'px'; /*Funktioniert noch nicht 100% aber richtiger Weg*/
 div.style.height = height / gridrow + 'px';
-div.addEventListener("mouseover", (e) =>{
-  e.target.style.backgroundColor = "red";
-  console.log("hovered");
-});
+div.addEventListener("mouseover", Hovercol);
 
 container.appendChild(div);
 alldivs.push(div);
 console.log("div created");
 
-
 }
-
-
   }
 
 
+}else{
+  console.log("Number cannot be higher than 100");
+}
+
+}
+
+function clear(){
+
+  alldivs.forEach( function (boxitem){
+ //boxitem.removeEventListener("mouseover", Hovercol);
+    boxitem.style.backgroundColor = "white";
+  } );
 
 }
 
 
 
-function clear(arr){
-
-
-arr.forEach(arritem =>{
-
-console.log(arritem);
-arritem.style.backgroundColor = "white";
-arritem.removeEventListener("mouseover", (e) =>{
-  e.target.style.backgroundColor = "red";
-  console.log("hovered");
-});
-
-});
 
 
 
-
-
-}
-
-//clear(alldivs);
-console.log(alldivs);
-createGrid(10); /*Momentanes Grid is 19x20 nicht 20x20!!!*/
 
 </script>
-
 
 </body>
 
 </html>
+
